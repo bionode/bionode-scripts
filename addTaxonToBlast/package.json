@@ -1,0 +1,17 @@
+{
+  "name": "addTaxonToBlast",
+  "version": "1.0.0",
+  "description": "Add taxonomic information to a tab separated BLAST output file",
+  "main": "addTaxonToBlast.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Vieira",
+  "license": "MIT",
+  "dependencies": {
+    "bionode-ncbi": "^1.6.1",
+    "split2": "^2.1.0",
+    "through2": "^2.0.1",
+    "through2-concurrent": "^1.1.1"
+  }
+}
