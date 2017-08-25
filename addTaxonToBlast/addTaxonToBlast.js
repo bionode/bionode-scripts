@@ -19,7 +19,7 @@ var taxonToAdd = process.argv[3]
 var queryStream = through.obj(query)
 
 function query (line, encoding, next) {
-  uid = line.split('\t')[16]
+  var uid = line.split('\t')[16]
   ncbi.fetch('taxonomy', uid + '[uid]', (taxonomy) => {
     try {
       var taxons = taxonomy[0].TaxaSet.Taxon[0].LineageEx[0].Taxon
