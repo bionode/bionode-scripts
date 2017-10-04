@@ -4,7 +4,7 @@
   "description": "Add taxonomic information to a tab separated BLAST output file",
   "main": "addTaxonToBlast.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && dependency-check . && mocha"
   },
   "author": "Bruno Vieira",
   "license": "MIT",

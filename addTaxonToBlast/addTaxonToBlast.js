@@ -18,14 +18,13 @@ var taxonToAdd = process.argv[3]
 // NCBI query function
 var queryStream = through.obj(query)
 
-function query(line, encoding, next) {
-  uid = line.split('\t')[16]
+function query (line, encoding, next) {
+  var uid = line.split('\t')[16]
   ncbi.fetch('taxonomy', uid + '[uid]', (taxonomy) => {
     try {
       var taxons = taxonomy[0].TaxaSet.Taxon[0].LineageEx[0].Taxon
       var taxClass = taxons.filter(t => t.Rank[0] === taxonToAdd)[0].ScientificName[0]
-    }
-    catch (error) {
+    } catch (error) {
       var taxClass = 'NA'
     }
     this.push(line + '\t' + taxClass.toString() + '\n')
